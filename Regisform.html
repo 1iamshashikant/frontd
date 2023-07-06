@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url("photo-1601524909162-ae8725290836.avif");
+      background-size: cover;
+      background-position: center;
+    }
+    h1 {
+      color: rgb(255, 25, 0);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center" style="text-decoration: underline;">SHARPENER</h1>
+    <div class="card mx-auto" style="max-width: 400px; margin-top: 50px; background-color: rgba(255, 255, 255, 0.8); border-radius: 5px;">
+      <div class="card-body">
+        <h1 class="text-success text-center">Book a Call</h1>
+        <p class="text-center">Book a slot and our representative will call you within 1 hour of the selected time.</p>
+        <form id="form" onsubmit="logFormData(event)">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" required class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" required class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone:</label>
+            <input type="tel" id="phone" name="phone" required class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="call-date" class="form-label">Time for Call:</label>
+            <div class="row">
+              <div class="col">
+                <input type="date" id="call-date" name="call-date" required class="form-control">
+              </div>
+              <div class="col">
+                <input type="time" id="call-time" name="call-time" required class="form-control">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success btn-block">Get a Call</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function logFormData(event) {
+      event.preventDefault();
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var callDate = document.getElementById("call-date").value;
+      var callTime = document.getElementById("call-time").value;
+
+      console.log("Name:", name);
+      console.log("Email:", email);
+      console.log("Phone:", phone);
+      console.log("Call Date:", callDate);
+      console.log("Call Time:", callTime);
+
+      document.getElementById("form").reset();
+    }
+  </script>
+</body>
+</html>
